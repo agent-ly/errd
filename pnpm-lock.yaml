@@ -1,0 +1,15 @@
+lockfileVersion: 5.4
+
+specifiers:
+  typescript: 5.0.1-rc
+
+devDependencies:
+  typescript: 5.0.1-rc
+
+packages:
+
+  /typescript/5.0.1-rc:
+    resolution: {integrity: sha512-zh75jY8gPo/y7fpmlTVN2bb2MigoLx4hGk+Cla9pY6lgSTvzJrmQQrRt5S80VTsEt6biWPZJgLK2nm6f0Ya+mA==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+    dev: true

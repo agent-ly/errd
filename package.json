@@ -1,0 +1,17 @@
+{
+  "name": "error_utils",
+  "version": "0.0.1",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": "./src/mod.ts",
+    "./option": "./src/option.ts",
+    "./result": "./src/result.ts",
+    "./try": "./src/try.ts"
+  },
+  "devDependencies": {
+    "typescript": "5.0.1-rc"
+  }
+}
