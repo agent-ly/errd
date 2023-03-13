@@ -1,5 +1,3 @@
-// Rust-like Option for TypeScript
-
 export const NONE = Symbol("None");
 
 export function Some<T>(input: T): Option<T> {

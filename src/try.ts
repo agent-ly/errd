@@ -1,5 +1,3 @@
-// Go-like error handling for TypeScript
-
 export class Try {
   static from<T, E extends Error>(fn: TryFn<T>): TryResult<T, E> {
     try {

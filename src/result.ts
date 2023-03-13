@@ -1,5 +1,3 @@
-// Rust-like Result for TypeScript
-
 export function Ok<T, E extends Error = Error>(input?: T): Result<T, E> {
   return new Result<T, E>(input as T);
 }
