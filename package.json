@@ -2,16 +2,37 @@
   "name": "error_utils",
   "version": "0.0.1",
   "type": "module",
-  "files": [
-    "src"
-  ],
   "exports": {
-    ".": "./src/mod.ts",
-    "./option": "./src/option.ts",
-    "./result": "./src/result.ts",
-    "./try": "./src/try.ts"
+    ".": {
+      "types": "./dist/mod.d.ts",
+      "import": "./dist/mod.mjs",
+      "require": "./dist/mod.cjs"
+    },
+    "./option": {
+      "types": "./dist/option.d.ts",
+      "import": "./dist/option.mjs",
+      "require": "./dist/option.cjs"
+    },
+    "./result": {
+      "types": "./dist/result.d.ts",
+      "import": "./dist/result.mjs",
+      "require": "./dist/result.cjs"
+    },
+    "./try": {
+      "types": "./dist/try.d.ts",
+      "import": "./dist/try.mjs",
+      "require": "./dist/try.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "unbuild": "^1.2.0"
   }
 }
