@@ -1,5 +1,5 @@
 {
-  "name": "error_utils",
+  "name": "handle_error",
   "version": "0.0.1",
   "type": "module",
   "exports": {
@@ -22,6 +22,11 @@
       "types": "./dist/try.d.ts",
       "import": "./dist/try.mjs",
       "require": "./dist/try.cjs"
+    },
+    "./util": {
+      "types": "./dist/util.d.ts",
+      "import": "./dist/util.mjs",
+      "require": "./dist/util.cjs"
     }
   },
   "files": [
@@ -32,6 +37,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "typescript": "5.0.4",
     "unbuild": "^1.2.0"
   }

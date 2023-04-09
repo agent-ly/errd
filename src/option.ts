@@ -1,3 +1,5 @@
+// https://github.com/OliverBrotchie/optionals
+
 export const NONE = Symbol("None");
 
 export function Some<T>(input: T): Option<T> {
