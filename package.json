@@ -12,6 +12,6 @@
     "./try": "./src/try.ts"
   },
   "devDependencies": {
-    "typescript": "5.0.1-rc"
+    "typescript": "5.0.4"
   }
 }
