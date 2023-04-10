@@ -33,3 +33,5 @@ export type TryFn<T> = () => T;
 export type TryAsyncFn<T> = () => Promise<T>;
 
 export type TryResult<T, E extends Error> = [null, T] | [TryError<E>, null];
+
+export default Try;

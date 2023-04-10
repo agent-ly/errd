@@ -1,6 +1,19 @@
 {
   "name": "errd",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Collection of error handling utilities for JavaScript and TypeScript.",
+  "keywords": [
+    "error",
+    "rust",
+    "result",
+    "option",
+    "ok",
+    "err",
+    "some",
+    "none",
+    "go",
+    "try"
+  ],
   "type": "module",
   "exports": {
     ".": {

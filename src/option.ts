@@ -96,3 +96,5 @@ export type OptionFromAsyncFn<T> = () => Promise<T | null | undefined>;
 export type OptionOrElseFn<T> = () => T;
 
 export type OptionMapFn<T, U> = (value: T) => U;
+
+export default Option;

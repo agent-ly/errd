@@ -1,11 +1,10 @@
 // https://github.com/vercel/vercel/tree/main/packages/error-utils
 
-export interface SpawnError extends NodeJS.ErrnoException {
-  spawnargs: string[];
-}
-
 export const isObject = (object: unknown): object is Record<string, unknown> =>
   typeof object === "object" && object !== null;
+
+export const isErrorLike = (error: unknown): error is ErrorLike =>
+  isObject(error) && "message" in error;
 
 export const isError = (error: unknown): error is Error => {
   if (!isObject(error)) return false;
@@ -24,18 +23,10 @@ export const isError = (error: unknown): error is Error => {
 
 export const isErrnoException = (
   error: unknown
-): error is NodeJS.ErrnoException => {
-  return isError(error) && "code" in error;
-};
+): error is NodeJS.ErrnoException => isError(error) && "code" in error;
 
-export interface ErrorLike {
-  message: string;
-  name?: string;
-  stack?: string;
-}
-
-export const isErrorLike = (error: unknown): error is ErrorLike =>
-  isObject(error) && "message" in error;
+export const isSpawnError = (error: unknown): error is SpawnError =>
+  isErrnoException(error) && "spawnargs" in error;
 
 export const errorToString = (error: unknown, fallback?: string): string => {
   if (isError(error) || isErrorLike(error)) return error.message;
@@ -53,6 +44,12 @@ export const normalizeError = (error: unknown): Error => {
     : new Error(errorMessage);
 };
 
-export function isSpawnError(error: unknown): error is SpawnError {
-  return isErrnoException(error) && "spawnargs" in error;
+export interface ErrorLike {
+  message: string;
+  name?: string;
+  stack?: string;
+}
+
+export interface SpawnError extends NodeJS.ErrnoException {
+  spawnargs: string[];
 }
