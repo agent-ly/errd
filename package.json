@@ -1,6 +1,6 @@
 {
   "name": "errd",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Collection of error handling utilities for JavaScript and TypeScript.",
   "repository": "https://github.com/agent-ly/errd",
   "license": "MIT",
