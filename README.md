@@ -19,7 +19,7 @@ else console.log("none");
 ```
 
 ```ts
-import Try from "errd/try";
+import { Try } from "errd/try";
 const [err, result] = Try.from(() => 42);
 const [err2, result2] = Try.fromAsync(() => fetch("https://..."));
 ```

@@ -1,3 +1,3 @@
-export * from "./option.ts";
-export * from "./result.ts";
-export * from "./try.ts";
+export * from "./option.js";
+export * from "./result.js";
+export * from "./try.js";

@@ -2,6 +2,8 @@
   "name": "errd",
   "version": "0.0.2",
   "description": "Collection of error handling utilities for JavaScript and TypeScript.",
+  "repository": "https://github.com/agent-ly/errd",
+  "license": "MIT",
   "keywords": [
     "error",
     "rust",
@@ -16,42 +18,22 @@
   ],
   "type": "module",
   "exports": {
-    ".": {
-      "types": "./dist/mod.d.ts",
-      "import": "./dist/mod.mjs",
-      "require": "./dist/mod.cjs"
-    },
-    "./option": {
-      "types": "./dist/option.d.ts",
-      "import": "./dist/option.mjs",
-      "require": "./dist/option.cjs"
-    },
-    "./result": {
-      "types": "./dist/result.d.ts",
-      "import": "./dist/result.mjs",
-      "require": "./dist/result.cjs"
-    },
-    "./try": {
-      "types": "./dist/try.d.ts",
-      "import": "./dist/try.mjs",
-      "require": "./dist/try.cjs"
-    },
-    "./util": {
-      "types": "./dist/util.d.ts",
-      "import": "./dist/util.mjs",
-      "require": "./dist/util.cjs"
-    }
+    ".": "./dist/mod.js",
+    "./option": "./dist/option.js",
+    "./result": "./dist/result.js",
+    "./try": "./dist/try.js",
+    "./util": "./dist/util.js"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
-    "prepublishOnly": "npm run build"
+    "build:clean": "rm -rf dist",
+    "build:compile": "tsc -p tsconfig.build.json",
+    "build": "pnpm build:clean && pnpm build:compile",
+    "prepack": "pnpm build"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "typescript": "5.0.4",
-    "unbuild": "^1.2.0"
+    "typescript": "5.0.4"
   }
 }

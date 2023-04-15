@@ -144,5 +144,3 @@ export type ResultMapFn<T, U> = (value: T) => U;
 export type ResultMapErrFn<E extends Error = Error, F extends Error = Error> = (
   error: E
 ) => F;
-
-export default Result;

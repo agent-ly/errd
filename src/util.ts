@@ -21,9 +21,8 @@ export const isError = (error: unknown): error is Error => {
   return false;
 };
 
-export const isErrnoException = (
-  error: unknown
-): error is NodeJS.ErrnoException => isError(error) && "code" in error;
+export const isErrnoException = (error: unknown): error is ErrnoException =>
+  isError(error) && "code" in error;
 
 export const isSpawnError = (error: unknown): error is SpawnError =>
   isErrnoException(error) && "spawnargs" in error;
@@ -50,6 +49,13 @@ export interface ErrorLike {
   stack?: string;
 }
 
-export interface SpawnError extends NodeJS.ErrnoException {
+export interface ErrnoException extends Error {
+  errno?: number;
+  code?: string;
+  path?: string;
+  syscall?: string;
+}
+
+export interface SpawnError extends ErrnoException {
   spawnargs: string[];
 }
